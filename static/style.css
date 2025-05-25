@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+body{
+    background-color: #F4EDEA;
+    padding-bottom: 60px;
+}
+
+#menu-lateral {
+    position: fixed;
+    left: 0px;
+    top: 120px; /* ajuste conforme a altura do seu cabeçalho */
+    bottom: 0;
+    height: auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-text{
+    color: #F2A007
+}
+/* Sidebar e itens do menu */
+.custom-sidebar {
+    background-color: #304269;
+    border-radius: 0.5rem;
+    padding: 0;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.custom-sidebar .list-group-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    background-color: #304269;
+    color: #D9E8F5;
+    border: none;
+    border-bottom: 1px solid #D9E8F5;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    font-weight: 350;
+    position: relative;
+    text-align: left;
+    gap: 12px;
+    padding-left: 20px;
+}
+/* Ícones nos botões da sidebar */
+.custom-sidebar .list-group-item::before {
+    display: none;
+}
+
+.custom-sidebar .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.custom-sidebar .list-group-item:hover, 
+.custom-sidebar .list-group-item:focus {
+    background-color: #002A54;
+    color: #F4D1AE;
+    padding-left: 25px;
+}
+
+.custom-sidebar .list-group-item.active {
+    background-color: #002A54;
+    color: #F4D1AE;
+    font-weight: bold;
+}
+
+.custom-card h1 {
+    white-space: nowrap;
+    padding: 0 15px;
+}
+.custom-card {
+    background-color: #002A54;
+    color: #D9E8F5;
+    border-radius: 0.5rem;
+    border: none;
+    position: relative;
+   box-shadow: none;
+   margin-bottom: 20px;
+   overflow: hidden;
+}
+
+.custom-header{
+    background-color:#304269;
+    color: #F4D1AE;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.custom-button {background-color: #e26f22;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+.custom-button:hover {
+    background-color: #d45a0c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Adicione um efeito para o botão quando clicado */
+.custom-button:active {
+    transform: translateY(0);
+}
+
+.custom-body{
+    background-color: #FAEDDA;
+}
+
+footer {
+    background-color: #304269; /* Mantém o fundo azul escuro como na sidebar */
+    color: #D9E8F5; /* Cor clara do texto para contraste (a mesma usada na sidebar) */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    z-index: 1000;
+    height: 50;
+}
+
+footer small {
+    color: inherit; /* Herda a cor definida no footer */
+    opacity: 1; /* Leve transparência para um visual mais suave */
+}
+
+/* #002A54 */
