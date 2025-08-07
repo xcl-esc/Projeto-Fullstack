@@ -8,7 +8,7 @@ body{
 #menu-lateral {
     position: fixed;
     left: 0px;
-    top: 120px; /* ajuste conforme a altura do seu cabeçalho */
+    top: 120px;
     bottom: 0;
     height: auto;
     width: 200px;
@@ -19,7 +19,7 @@ body{
 .custom-text{
     color: #F2A007
 }
-/* Sidebar e itens do menu */
+
 .custom-sidebar {
     background-color: #304269;
     border-radius: 0.5rem;
@@ -46,7 +46,7 @@ body{
     gap: 12px;
     padding-left: 20px;
 }
-/* Ícones nos botões da sidebar */
+
 .custom-sidebar .list-group-item::before {
     display: none;
 }
@@ -101,7 +101,6 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Adicione um efeito para o botão quando clicado */
 .custom-button:active {
     transform: translateY(0);
 }
@@ -111,8 +110,8 @@ body{
 }
 
 footer {
-    background-color: #304269; /* Mantém o fundo azul escuro como na sidebar */
-    color: #D9E8F5; /* Cor clara do texto para contraste (a mesma usada na sidebar) */
+    background-color: #304269;
+    color: #D9E8F5; 
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -123,8 +122,8 @@ footer {
 }
 
 footer small {
-    color: inherit; /* Herda a cor definida no footer */
-    opacity: 1; /* Leve transparência para um visual mais suave */
+    color: inherit;
+    opacity: 1;
 }
 
 /* #002A54 */
