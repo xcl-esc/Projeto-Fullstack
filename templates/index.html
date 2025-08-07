@@ -25,21 +25,8 @@
             <i class="bi bi-award me-2"></i>Abono Salarial</button>
         <button class="list-group-item list-group-item-action" onclick="mostrar('rescisao')">
             <i class="bi bi-file-earmark-break me-2"></i>Rescisão</button>
-            <!-- <button class="list-group-item list-group-item-action disabled">
-                <i class="bi bi-plus-circle me-2"></i>Botão extra 1
-            </button>
-            <button class="list-group-item list-group-item-action disabled">
-                <i class="bi bi-plus-circle me-2"></i>Botão extra 2
-            </button>
-            <button class="list-group-item list-group-item-action disabled">
-                <i class="bi bi-plus-circle me-2"></i>Botão extra 1
-            </button>
-            <button class="list-group-item list-group-item-action disabled">
-                <i class="bi bi-plus-circle me-2"></i>Botão extra 2
-            </button> -->
-
     </div>
-    <!--Décimo Terceiro-->
+    
     <div class="card mb-4 shadow-sm rounded-3" style="max-width: 600px; width: 100%; margin: 0 auto; display:none">
         <div class="card-header custom-header">
             <i class="bi bi-cash-coin"></i> Décimo Terceiro
@@ -60,7 +47,6 @@
         </div>
     </div>
     
-    <!-- Contribuinte Avulso-->
     <div class="card mb-4 shadow-sm rounded-3" style="max-width: 600px; width: 100%; margin: 0 auto; display:none">
         <div class="card-header custom-header">
             <i class="bi bi-person-badge"></i> Contribuição INSS
@@ -84,7 +70,6 @@
         </div>
     </div>
     
-    <!-- Abono Salarial-->
     <div class="card mb-4 shadow-sm rounded-3" style="max-width: 600px; width: 100%; margin: 0 auto; display:none">
         <div class="card-header custom-header">
             <i class="bi bi-award"></i> Abono Salarial
@@ -101,7 +86,6 @@
         </div>
     </div>
     
-    <!-- Rescisão-->
     <div class="card mb-4 shadow-sm rounded-3" style="max-width: 600px; width: 100%; margin: 0 auto; display:none">
         <div class="card-header custom-header">
             <i class="bi bi-file-earmark-break"></i> Rescisão
@@ -146,7 +130,6 @@
             });
         }
          
-        // Décimo Terceiro
         document.getElementById('decimo_terceiro_form').addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -167,7 +150,6 @@
             document.getElementById('resultado_decimo').innerText = 'Décimo Terceiro: ' + valorFormatado;
         });
 
-         // Contribuinte Avulso
          document.getElementById('contribuinte_avulso_form').addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -187,7 +169,7 @@
             }
 
             const data = await response.json();
-            // se vier um objeto (para tipo 2), formata cada chave
+        
             if (typeof data.resultado === 'object') {
             let html = '<strong>Contribuições possíveis:</strong><ul>';
             for (const [chave, val] of Object.entries(data.resultado)) {
@@ -201,7 +183,6 @@
             return;
             }
 
-            // caso venha um único número
             const valor = Number(data.resultado);
             if (isNaN(valor)) {
             document.getElementById('resultado_contribuinte_avulso')
@@ -216,7 +197,6 @@
             .innerText = 'Contribuição INSS: ' + valorFormatado;
         });
 
-        // Abono Salarial
         document.getElementById('abono_form').addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -241,7 +221,6 @@
             }
         });
 
-        // Rescisão
         document.getElementById('rescisao_form').addEventListener('submit', async function(e) {
             e.preventDefault();
 
