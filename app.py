@@ -3,12 +3,10 @@ from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
-# ROTA PARA A PÁGINA INICIAL
 @app.route('/')
 def index():
     return render_template('index.html')
 
-#ROTA PARA CÁLCULO DO DÉCIMO TERCEIRO
 @app.route('/calcular_decimo_terceiro', methods=['POST'])
 def calcular_decimo_terceiro():
     data = request.json
@@ -20,7 +18,6 @@ def calcular_decimo_terceiro():
 
     return jsonify({"decimo_terceiro": resultado})
 
-#ROTA PARA CÁLCULO DE CONTRIBUIÇÃO PARA EMPREGADOS OU CONTRIBUIIÇÃO AVULSA/INDIVIDUAL
 @app.route('/contribuinte_avulso', methods=['POST'])
 def calcular_contribuinte_avulso():
     data = request.json
@@ -32,10 +29,8 @@ def calcular_contribuinte_avulso():
 
     return jsonify({"resultado": resultado})
 
-#ROTA PARA O CÁLCULO DO ABONO SALARIAL
 @app.route('/abono_salarial', methods=['POST'])
 def calcular_abono_salarial():
-    """Calcula o valor do abono salarial com base nos meses trabalhados."""
     data = request.json
     meses_trabalhados = data.get('meses_trabalhados')
 
@@ -47,7 +42,6 @@ def calcular_abono_salarial():
 
     return jsonify({"abono_salarial": resultado})
 
-#ROTA PARA CALCULO DE RESCISAO BASEANDO FATORES COMO FÉRIAS ATRASADAS, FGTS E AVISO PRÉVIO
 @app.route('/rescisao', methods=['POST'])
 def calcular_rescisao():
     data = request.json
@@ -57,10 +51,10 @@ def calcular_rescisao():
     try:
         ferias_vencidas = int(ferias_vencidas)
     except ValueError:
-        return jsonify({"erro": "Férias vencidas deve ser um número inteiro."}), 400
+        return jsonify({"erro": "Férias vencidas precisa ser um número inteiro."}), 400
 
     if salario_bruto is None or meses_trabalhados is None:
-        return jsonify({"erro": "Dados insuficientes."}), 400
+        return jsonify({"erro": "Preencha todos os campos."}), 400
                         
     trabalhador = Trabalhador(salario_bruto, meses_trabalhados=meses_trabalhados, meses_trabalhados_decimo=0)
 
